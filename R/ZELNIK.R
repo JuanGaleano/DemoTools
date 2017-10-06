@@ -7,6 +7,8 @@
 #' Gray_1987_The Missing Ages: Adjusting for Digit Preference
 
 #' @param Value numeric. A vector of demographic counts in single age groups.
+#' @param q numeric. A vector with the linear operators for use in deriving unbiased estimates of single-age distributions
+#' @param Age integer lower bound of age classes.
 
 #' @details Single year age groups are assumed.
 
@@ -28,7 +30,7 @@
 #'       429816,7951,35583,8612,6589,454645)
 #' Age  <-c(0:75) 
 #' zelnik(Pop,1)
-zelnik <- function(Value,q){
+zelnik <- function(Value,q,Age){
   
   # Table 11, pp.20 Linear operators for use in deriving unbiased estimates of single-age distributions
   q1 <-c(-0.0025,-0.01,-0.02,-0.03,-0.04,0.05,0.14,0.13,0.12,0.11,
